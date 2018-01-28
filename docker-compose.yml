@@ -1,0 +1,25 @@
+version: '2'
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+  private:
+    driver: bridge
+    internal: true
+  host:
+    external: true
+
+
+services:
+
+ cozy-base-ubuntu:
+  build:
+   context: cozy-base/ubuntu
+  image: cozy-base:ubuntu
+
+ cozy-base-debian:
+  build:
+   context: cozy-base/debian
+  image: cozy-base:debian
